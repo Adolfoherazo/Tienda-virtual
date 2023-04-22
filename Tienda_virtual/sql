@@ -1,0 +1,12 @@
+CREATE TABLE "lineapedidos2" (
+      "id" integer NOT NULL
+	  PRIMARY KEY AUTOINCREMENT,
+	  "cantidad" varchar(100) NOT NULL,
+	  "created_at" datetime NOT NULL,
+	  "pedido_id" bigint NOT NULL REFERENCES
+	  "pedidos" ("id") DEFERRABLE INITIALLY DEFERRED,
+	  "producto_id" bigint NOT NULL REFERENCES
+	  "tienda_producto" ("id") DEFERRABLE INITIALLY DEFERRED, 
+	  "user_id" integer NOT NULL REFERENCES
+	  "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED)
+	  

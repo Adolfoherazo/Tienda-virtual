@@ -1,0 +1,111 @@
+{% extends "walkz/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    <style>
+.cta {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-image:  url("media/servicios/astro.jpg");
+  width: 100%;
+}
+
+.cta .cta-inner:before {
+  border-radius: 0.5rem;
+  content: '';
+  position: absolute;
+  top: -0.5rem;
+  bottom: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  border: 0.25rem solid rgba(23, 1, 58);
+}
+
+.footer {
+  background-color:rgb(23, 1, 58);
+}
+.cta .cta-inner {
+  position: relative;
+  padding: 3rem;
+  margin: 0.5rem;
+  background-color:rgb(23, 1, 58);
+  color: cornsilk;
+}
+
+.intro .intro-text {
+    left: 600;
+    width: 40%;
+    margin-top: 3rem;
+    background-color:rgb(23, 1, 58);
+    color: cornsilk;
+    position: absolute;
+  }
+
+#mainNav {
+  background-color: rgb(23, 1, 58);
+  font-family: 'Raleway';
+}
+
+  body {
+  font-family: 'Lora';
+  background-image:  url("media/servicios/astro.jpg");
+ 
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+    </style>
+
+   <!-- Heading -->
+   <section class="page-section clearfix">
+    <div class="container">
+      <div class="intro">
+        <img style="width: 50%;" class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'walkz/img/adolfo.jpg' %}" alt="">
+        <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+          <h2 class="section-heading mb-4" >
+            <span class="section-heading-upper">Fundador</span>
+            <span class="section-heading-lower">Adolfo Herazo </span>
+          </h2>
+          <p class="mb-3">Fundador y programador de la Tienda virtual WALK.</br></br>
+             Lenguajes de programacion:</br>
+             -Python
+             -Java Script
+             -CSS
+             -HTML</br></br>
+             Framework:</br>
+             -Django</br></br>
+             Base de datos:</br>
+             -SQLlite
+          </p>
+         
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  
+    <!-- Message -->
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">  Proyecto</span>
+                <span class="section-heading-lower">Tienda virtual</span>
+              </h2>
+              <p class="mb-0">Este proyecto lo hice con el fin de medir mis capacidad como programador de software y seguir con el aprendizaje, ademas de innovar en mi negocio como vendedor,muchas gracias.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
+  
+   
+
+

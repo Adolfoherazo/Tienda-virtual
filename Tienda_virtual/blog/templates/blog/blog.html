@@ -1,0 +1,106 @@
+{% extends "walkz/base.html" %}
+
+{% load static %}
+
+{% block content %}
+<style>
+    .cta {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      background: linear-gradient(rgb(36, 0, 94), rgba(101, 93, 156, 0.65));
+    }
+    
+    .cta .cta-inner:before {
+      border-radius: 0.5rem;
+      content: '';
+      position: absolute;
+      top: -0.5rem;
+      bottom: -0.5rem;
+      left: -0.5rem;
+      right: -0.5rem;
+      border: 0.25rem solid rgba(23, 1, 58);
+    }
+    
+    .footer {
+      background-color:rgb(23, 1, 58);
+    }
+    .cta .cta-inner {
+      position: relative;
+      padding: 3rem;
+      margin: 0.5rem;
+      background-color:rgb(23, 1, 58);
+      color: cornsilk;
+    }
+    
+    .intro .intro-text {
+        left: 600;
+        width: 40%;
+        margin-top: 3rem;
+        background-color:rgb(23, 1, 58);
+        color: cornsilk;
+        position: absolute;
+      }
+    
+    #mainNav {
+      background-color: rgb(23, 1, 58);
+      font-family: 'Raleway';
+    }
+    
+      body {
+      font-family: 'Lora';
+      background: linear-gradient(rgb(36, 0, 94), rgba(134, 122, 209, 0.65)), url("../img/bg_main.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+    }
+
+    .linksCategorias{
+      color:white;
+      text-decoration: underline;
+    }
+        </style>
+
+{% for post in posts %}
+
+    <!-- Heading -->
+    <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="" style="width:50%;" >
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h3 class="section-heading mb-4" >
+                <span class="section-heading-lower" style="width:  100%;">{{post.titulo}}</span>
+                <span class="section-heading-upper" >{{post.contenido}}</span>
+              </h3>
+              <div style="text-align: left; font-size: 0.8en;" >
+
+                Autor:{{post.autor}}
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{% endfor %}
+
+    <section>
+      <div style="width: 75%; margin: auto; text-align: center; color: white;">
+      
+        Categorias:
+
+        {% for post in posts %}
+
+          {% for categoria in post.categorias.all %}
+
+          <a href="{% url 'categoria' categoria.id %}" class="linksCategorias"> {{categoria.nombre}}</a> &nbsp;&nbsp;
+
+          {% endfor %}
+
+        {% endfor %}
+      </div>
+    </section>
+
+
+
+{% endblock %}
